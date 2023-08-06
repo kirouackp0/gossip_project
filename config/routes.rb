@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+ #Routes for views/pages
   root 'homepage#index'
   get 'contact/index', to: 'contact#index'
   get 'team/index', to: 'team#index'
-  get 'gossip_feed/index', to: 'gossip_feed#index'
-  get 'new_gossip_form/index', to: 'new_gossip_form#index'
+  get 'gossips/index', to: 'gossips#index'
+  get 'gossips/new', to: 'gossips#new'
 
+#Routes for resources
   resources :cities
   resources :users
   resources :gossips

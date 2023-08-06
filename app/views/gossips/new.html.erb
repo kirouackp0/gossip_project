@@ -1,0 +1,33 @@
+
+<h1>Spill the Tea, Sis</h1>
+
+<div class="flash">
+    <% if flash[:notice] %>
+        <div class="alert alert-secondary" role="alert">
+            <p class="notice"><%= flash[:notice] %></p>
+        </div>
+    <% elsif flash[:error] %> 
+        <div class="alert alert-danger" role="alert">
+            <p class="error"><%= flash[:error] %></p>
+        </div>
+    <% end %>
+</div>
+
+<div class="form">
+  <%= form_tag('/gossips', method: :post) do %>
+    <%= label_tag(:user_id, 'User:') %>
+    <%= text_field_tag('gossip[user_id]') %>
+    <br>
+    <%= label_tag(:title, 'Title:') %>
+    <%= text_field_tag('gossip[title]') %>
+    <br>
+    <%= label_tag(:content, 'Content:') %>
+    <%= text_area_tag('gossip[content]') %>
+    <br>
+    <%= submit_tag('Create Gossip') %>
+  <% end %>
+</div>
+
+<div>
+    <img src="https://media.tenor.com/iy97vn4zKXoAAAAM/girl-spill-the-tea.gif" class="img">
+</div>
