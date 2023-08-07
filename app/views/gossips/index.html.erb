@@ -3,6 +3,8 @@
 <div class="main">
   <img src="https://media.tenor.com/4PS1bpKTLJUAAAAC/spill-the-tea-sips-tea.gif" class="img">
     <p>If you have tea to spill, it's <a href="/gossips/new">here</a> sweetie</p>
+    <p>Check out what's happening in <a href="/cities/index">your city</a></p>
+    <p>List of gossip from <a href="/users/index">each user</a></p>
   </div>
 
 <div class="feed">
@@ -12,11 +14,12 @@
         <div class="ms-2 me-auto">
           <div class="fw-bold"><strong>The Tea: <%= gossip.title %></strong></div>
             <p><strong>Gossip Queen: <%= gossip.user.first_name %></strong></p>
-            <p><%= gossip.content %></strong></p>
-            <p><%= gossip.user.city.name%></p>
+            <p>In City: <%= gossip.user.city.name%></p>
+            <p>Gossip: <%= gossip.content %></strong></p>
               <% gossip.tags.each do |tag| %>
-              <p><%= tag.title %></p>
+              <p>#<%= tag.title %></p>
             <% end%>
+            <a href="<%= gossip_path(gossip) %>" class="btn">See more</a>
           </div>
           <span class="badge bg-primary rounded-pill"><%= @gossips.size - index %></span>
         </li>

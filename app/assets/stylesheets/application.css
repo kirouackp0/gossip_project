@@ -58,3 +58,33 @@ h1 {
 .form {
   text-align: center;
 }
+
+.gossippage {
+  text-align: center;
+}
+
+.btn {
+  color: #FE347E;
+  border: solid 1px blue;
+}
+
+.citylist {
+  border: none;
+  text-align: center;
+  list-style: none;
+  padding: 200px auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}

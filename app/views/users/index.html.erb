@@ -1,0 +1,17 @@
+<div class="feed">
+  <% @users.each do |user| %>
+    <h2><%= "#{user.first_name} #{user.last_name}"%>'s Gossips</h2>
+    <ul>
+      <% user.gossips.each do |gossip| %>
+        <li>
+          <strong>Title: <%= gossip.title %></strong><br>
+          <strong>Content: </strong> <%= gossip.content %>
+            <% gossip.tags.each do |tag| %>
+            <p>#<%= tag.title %></p>
+            <% end%>
+          <br><br>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

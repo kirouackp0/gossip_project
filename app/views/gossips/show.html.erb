@@ -1,8 +1,10 @@
+<div class="gossippage">
+    <h1><%= @gossip.title %></h1>
+    <p>ID: <%= @gossip.user_id %></p>
+    <p>From User: <%= @gossip.user.first_name %> <%= @gossip.user.last_name %></p>
+    <p>In City: <%= @gossip.user.city.name%>
+    <p>The Tea: <%= @gossip.content %></p>
+    <%= button_to "Back", gossips_index_path, method: :get %>
+</div>
 
-<h1><%= @gossip.title %></h1>
-<p><%= @gossip.user_id %></p>
-<p><%= @gossip.content %></p>
 
-
-
-<%= button_to "Back to home", root_path, method: :get %>

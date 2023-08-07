@@ -1,0 +1,28 @@
+<h1>Cities</h1>
+
+<div class="flash">
+    <% if flash[:notice] %>
+        <div class="alert alert-secondary" role="alert">
+            <p class="notice"><%= flash[:notice] %></p>
+        </div>
+    <% elsif flash[:error] %> 
+        <div class="alert alert-danger" role="alert">
+            <p class="error"><%= flash[:error] %></p>
+        </div>
+    <% end %>
+</div>
+
+<div class="form">
+  <%= form_tag('/cities', method: :post) do %>
+    <%= label_tag(:city_id, 'City:') %>
+    <%= text_field_tag('city[city_id]') %>
+    <br>
+    <%= label_tag(:name, 'Name:') %>
+    <%= text_field_tag('city[name]') %>
+    <br>
+    <%= label_tag(:zip_code, 'Zip Code:') %>
+    <%= text_field_tag('city[zip_code]') %>
+    <br>
+    <%= submit_tag('Create City') %>
+  <% end %>
+</div>

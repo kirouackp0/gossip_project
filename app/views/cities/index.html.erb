@@ -1,0 +1,34 @@
+<h1>Cities</h1>
+
+<h2>The hottest gossip in (your) town</h2>
+
+<div class="citylist">
+  <ul>
+    <% @cities.each do |city| %>
+      <li><%= link_to city.name, city_path(city) %></li>
+    <% end %>  
+  </ul>
+</div>
+
+<div class="feed">
+  <% @cities.each do |city| %>
+    <h2><%= city.name %>'s Gossips</h2>
+    <ul>
+      <% city.gossips.each do |data| %>
+        <li>
+          <strong>Title:</strong> <%= data.title %><br>
+          <strong>Content:</strong> <%= data.content %>
+          <%= data.user.first_name %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+
+<a href="<%= new_city_path %>" class="btn">Create a city</a>
+<!-- 
+<a href="<#%= city_path(city.id) %>" class="btn">See city</a>
+-->
+<!-- 
+-->
